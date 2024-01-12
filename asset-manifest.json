@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/binding-energy-ui-final/static/css/main.b41319dd.css",
+    "main.js": "/binding-energy-ui-final/static/js/main.82db8e60.js",
+    "index.html": "/binding-energy-ui-final/index.html",
+    "main.b41319dd.css.map": "/binding-energy-ui-final/static/css/main.b41319dd.css.map",
+    "main.82db8e60.js.map": "/binding-energy-ui-final/static/js/main.82db8e60.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b41319dd.css",
+    "static/js/main.82db8e60.js"
+  ]
+}

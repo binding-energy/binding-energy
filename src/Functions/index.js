@@ -249,7 +249,7 @@ const elements = (symbol) => {
             return "Gold";
         case "Hg":
             return "Mercury";
-        case "Ti":
+        case "Tl":
             return "Thallium";
         case "Pb":
             return "Lead";
@@ -362,7 +362,7 @@ const splitElementName = (str) => {
     let first = "";
     let second = "";
     const length = str.length;
-    if (length % 2 == 0) {
+    if (length % 2 === 0) {
         for (let i = 0; i < length / 2; i++) {
             first += str[i];
         }

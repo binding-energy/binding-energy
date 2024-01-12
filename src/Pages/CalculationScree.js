@@ -5,10 +5,12 @@ import { liquid_drop_model, elements } from "../Functions";
 import { useEffect } from "react";
 import { useState } from "react";
 import IsotopeNotFound from "./IsotopeNotFound";
+import { TypeAnimation } from 'react-type-animation';
+
 //TODO:404 screen
 const CalulationScreen = () => {
     const [data, setData] = useState();
-    
+
     const {
         Z,
         N,
@@ -16,7 +18,7 @@ const CalulationScreen = () => {
     const apiCall = async () => {
         try {
             const url = `https://physics-poc.onrender.com/data?z=${Z}&n=${N}`;
-            
+
             const response = await fetch(url);
             if (response.ok) {
                 const json = await response.json();
@@ -36,9 +38,19 @@ const CalulationScreen = () => {
         return (
             <div className="flex flex-row items-center justify-center h-screen bg-black " >
                 <div className="m-2 mb-3 self-center">
-                    {/* <h1 className=" text-white text-3xl font-semibold ">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1> */}
-                    <h1 className=" text-white text-3xl font-semibold animate-bounce">Calculating</h1>
+                    <h1 className=" text-white text-3xl font-semibold animate-bounce">Calculating<TypeAnimation sequence={[
+                        ".",
+                        100,
+                        ".",
+                        100,
+                        ".",
+                        100
+                    ]}
+                    wrapper="span"
 
+                        speed={20} repeat={Infinity} />
+                    </h1>
+                    {/*  */}
                 </div>
             </div>
         )
@@ -49,7 +61,7 @@ const CalulationScreen = () => {
         )
 
     }
-    if(data["z"] === "0") {
+    if (data["z"] === "0") {
         return (
             <IsotopeNotFound />
         )

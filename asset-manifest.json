@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/binding-energy/static/css/main.b41319dd.css",
-    "main.js": "/binding-energy/static/js/main.82db8e60.js",
+    "main.css": "/binding-energy/static/css/main.903ae878.css",
+    "main.js": "/binding-energy/static/js/main.c8f71907.js",
     "index.html": "/binding-energy/index.html",
-    "main.b41319dd.css.map": "/binding-energy/static/css/main.b41319dd.css.map",
-    "main.82db8e60.js.map": "/binding-energy/static/js/main.82db8e60.js.map"
+    "main.903ae878.css.map": "/binding-energy/static/css/main.903ae878.css.map",
+    "main.c8f71907.js.map": "/binding-energy/static/js/main.c8f71907.js.map"
   },
   "entrypoints": [
-    "static/css/main.b41319dd.css",
-    "static/js/main.82db8e60.js"
+    "static/css/main.903ae878.css",
+    "static/js/main.c8f71907.js"
   ]
 }

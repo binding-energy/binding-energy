@@ -1,6 +1,6 @@
 {
   "name": "binding-energy-ui-final",
-  "homepage": "https://binding-energy.github.io/binding-energy/",
+  "homepage": "https://binding-energy.github.io",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

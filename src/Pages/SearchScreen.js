@@ -51,13 +51,9 @@ const SearchScreen = () => {
 
                 <div className="grid justify-items-center px-6">
                     <p className="text-wrap md:text-xl sm:text-sm m-4 font-normal lg:leading-[40px] md:leading-[30px] " >
-                        Nuclear binding energy is the amount of energy required to separate a particle
-                        from a system of particles or to disperse all the particles of the system.
-                        This website calculates the binding energy of given isotopes using two methods.
-                        The first method is the mass defect approach,
-                        which is where you find the difference between the summation of the mass of the individual parts of an atom
-                        and the mass of the atom itself. The second method is by using the liquid drop model,
-                        an experimental model that can be used to determine an atom's binding energy.
+                        Nuclear Binding Energy is the energy required to break a nucleus into its constituent nucleons (protons and neutrons), or the energy released when these nucleons combine to form a nucleus. 
+                        This process involves a phenomenon known as the "mass defect," where the mass of a nucleus is actually less than the total mass of its constituent nucleons. 
+                        According to Einstein's mass-energy equivalence principle, the difference in mass translates into the binding energy of the nucleus.
                     </p>
                 </div>
 

@@ -54,6 +54,10 @@ const SearchScreen = () => {
                         Nuclear Binding Energy is the energy required to break a nucleus into its constituent nucleons (protons and neutrons), or the energy released when these nucleons combine to form a nucleus. 
                         This process involves a phenomenon known as the "mass defect," where the mass of a nucleus is actually less than the total mass of its constituent nucleons. 
                         According to Einstein's mass-energy equivalence principle, the difference in mass translates into the binding energy of the nucleus.
+
+            Example: The hydrogen-2 nucleus, also called a deuteron, is the simplest kind of nucleus with one proton and one neutron, requires an input of 2.23 million electron volts (MeV) energy to disassemble. 
+            In contrast, when a neutron and proton come together to create a deuteron, 2.23 MeV of energy is released as gamma radiation.
+
                     </p>
                 </div>
 

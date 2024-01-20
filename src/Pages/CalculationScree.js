@@ -5,7 +5,7 @@ import { liquid_drop_model, elements } from "../Functions";
 import { useEffect } from "react";
 import { useState } from "react";
 import IsotopeNotFound from "./IsotopeNotFound";
-import { TypeAnimation } from 'react-type-animation';
+import Typed from 'react-typed';
 
 //TODO:404 screen
 const CalulationScreen = () => {
@@ -38,19 +38,10 @@ const CalulationScreen = () => {
         return (
             <div className="flex flex-row items-center justify-center h-screen bg-black " >
                 <div className="m-2 mb-3 self-center">
-                    <h1 className=" text-white text-3xl font-semibold animate-bounce">Calculating<TypeAnimation sequence={[
-                        ".",
-                        100,
-                        ".",
-                        100,
-                        ".",
-                        100
-                    ]}
-                    wrapper="span"
+                    {/* <h1 className=" text-white text-3xl font-semibold ">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1> */}
+                    {/* <h1 className=" text-white text-3xl font-semibold ">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1> */}
+                    <h1 className=" text-white text-3xl font-semibold animate-bounce">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1>
 
-                        speed={20} repeat={Infinity} />
-                    </h1>
-                    {/*  */}
                 </div>
             </div>
         )

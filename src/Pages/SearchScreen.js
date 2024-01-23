@@ -50,10 +50,20 @@ const SearchScreen = () => {
                 <h2 className=" text-center text-2xl mb-2 font-normal mt-12"  >What is Nuclear Binding Energy?</h2>
 
                 <div className="grid justify-items-center px-6">
-                    <p className="text-wrap md:text-xl sm:text-sm m-4 font-normal lg:leading-[40px] md:leading-[30px] " >
-                        Nuclear Binding Energy is the energy required to break a nucleus into its constituent nucleons (protons and neutrons), or the energy released when these nucleons combine to form a nucleus. 
-                        This process involves a phenomenon known as the "mass defect," where the mass of a nucleus is actually less than the total mass of its constituent nucleons. 
-                        According to Einstein's mass-energy equivalence principle, the difference in mass translates into the binding energy of the nucleus.
+                    <p className="text-wrap md:text-lg sm:text-sm m-0 font-normal lg:leading-[25px] md:leading-[20px] " >
+                        <b>Nuclear Binding Energy</b> is the energy required to break a nucleus into its constituent nucleons (protons and neutrons), or the energy released when these nucleons combine to form a nucleus. This process involves a phenomenon known as the "mass defect," where the mass of a nucleus is actually less than the total mass of its constituent nucleons. According to Einstein's mass-energy equivalence principle, the difference in mass translates into the binding energy of the nucleus.
+                    </p>
+                    <br />
+                    <p className="text-wrap m-0 font-normal lg:leading-[25px] md:leading-[20px] md:text-lg sm:text-sm" >
+                        <b>Example:</b> The hydrogen-2 nucleus, also called a deuteron, is the simplest kind of nucleus with one proton and one neutron, requires an input of 2.23 million electron volts (MeV) energy to disassemble. In contrast, when a neutron and proton come together to create a deuteron, 2.23 MeV of energy is released as gamma radiation.
+                    </p>
+                    <br />
+                    <p className="text-wrap m-0 font-normal lg:leading-[25px] md:leading-[20px] md:text-lg sm:text-sm">
+                        The <b>Nuclear Binding Energy</b> per nucleon is the average energy needed to detach a single nucleon from the nucleus. It varies across different elements, with hydrogen-2 having an average of 1.11226 MeV per nucleon, while nickel-62 has about 8.7945 MeV per nucleon. This measure gives insight into the stability of a nucleus: the higher the binding energy per nucleon, the more stable the nucleus.
+                    </p>
+                    <br />
+                    <p className="text-wrap m-0 font-normal lg:leading-[25px] md:leading-[20px] md:text-lg sm:text-sm">
+                        This website provides calculations for the nuclear binding energy of specific isotopes through two distinct methods: 1.) <b>The mass defect approach</b>, which involves calculating the difference between the mass of the nucleus and its constituent protons and neutrons, and 2.) <b>The liquid drop model</b>, a semi-empirical mass formula that estimates the binding energy of a nucleus based on its proton and neutron count.
                     </p>
                 </div>
 

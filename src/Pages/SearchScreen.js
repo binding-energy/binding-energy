@@ -13,7 +13,7 @@ const SearchScreen = () => {
     const {
         Z,
         setZ,
-        N,
+        N, 
         setN,
     } = useGlobalState();
 
@@ -38,8 +38,17 @@ const SearchScreen = () => {
             setErrMsg2("This field cannot be empty!")
         }
 
-     }
-    const nav = useNavigate();
+    }
+    const nav = useNavigate()
+
+    const enterListenHandler = event => {
+        if (event.key === "Enter") {
+            console.log("Enter key pressed!");
+            // Do something with the entered text
+            onClick()
+        }
+    };
+
 
     return (
         <div className="grid grid-cols-2 p-0 h-screen " >
@@ -77,17 +86,22 @@ const SearchScreen = () => {
                 <h2 className=" text-center text-2xl font-normal mb-2  mt-12" >Enter Isotope Properties:</h2>
 
                 <div className="grid justify-items-center " >
-                    <CustomInput placeholder={"Enter the number of protons (Z)"} value={Z} onChange={({ target }) => { setZ(target.value) }} error={error1} error_message={errMsg1} />
-                    <CustomInput placeholder={"Enter the number of neutrons (N)"} value={N} onChange={({ target }) => { setN(target.value) }} error={error2} error_message={errMsg2} />
+                    <CustomInput placeholder={"Enter the number of protons (Z)"} value={Z} onChange={({ target }) => { setZ(target.value) }} error={error1} error_message={errMsg1} onKeyDown={enterListenHandler} />
+                    <CustomInput placeholder={"Enter the number of neutrons (N)"} value={N} onChange={({ target }) => { setN(target.value) }} error={error2} error_message={errMsg2} onKeyDown={enterListenHandler} />
 
 
                     <div className=" mx-[110px]" >
                         <CustomButton title={"Search"} onClick={() => onClick()} />
                     </div>
-
                 </div>
+
+                {/* <div className="px-6">
+                    <p className="text-wrap text-xl font-normal lg:leading-[25px] md:leading-[20px] " >Example: Hydrogen-3</p>
+                    <p className="text-wrap text-xl font-normal lg:leading-[25px] md:leading-[20px] " >Number of Protons(Z): 1</p>
+                    <p className="text-wrap text-xl font-normal lg:leading-[25px] md:leading-[20px] " >Number of Neutrons(N): 2</p>
+                </div> */}
             </div>
-        </div>
+        </div >
     )
 }
 export default SearchScreen;

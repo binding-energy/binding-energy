@@ -13,7 +13,7 @@ const mass_defect_be = (Mx, Z, N) => {
     // // const conversion = 1.66053904 * (10**-27)
     // const bindnig_engergy = mass_defect * (931.49 / (speed_of_light * speed_of_light)) * (speed_of_light * speed_of_light);
 
-    return bindnig_engergy.toFixed(2);
+    return bindnig_engergy.toFixed(6);
 };
 
 const mass_defect = (Mx, Z, N) => {

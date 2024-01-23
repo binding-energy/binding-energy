@@ -105,7 +105,7 @@ const CalulationScreen = () => {
                     <br />
                     Binding Energy (B.E): {mass_defect_be(atomic_mass, atomic_number, nutreon_number)} MeV
                     <br />
-                    Binding Energy per nucleon (B.E/A): Binding Energy: {(mass_defect_be(atomic_mass, atomic_number, nutreon_number) / atomic_mass).toFixed(8)} MeV
+                    Binding Energy per nucleon (B.E/A): Binding Energy: {(mass_defect_be(atomic_mass, atomic_number, nutreon_number) / (atomic_number + nutreon_number)).toFixed(8)} MeV
                     <br />
                     Library Binding Energy per nucleon (B.E/A): {data['binding'] / 1000} MeV
                 </p>

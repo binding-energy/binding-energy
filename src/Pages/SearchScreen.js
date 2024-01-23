@@ -52,7 +52,7 @@ const SearchScreen = () => {
 
     return (
         <div className="grid grid-cols-2 p-0 h-screen " >
-
+{/* This is Hadi's version */}
             {/* Description */}
             <div className="bg-black text-white p-6 px-0 items-center " >
                 <h1 className=" text-end text-5xl font-semibold" >Binding Ener</h1>

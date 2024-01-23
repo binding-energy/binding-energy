@@ -4,13 +4,14 @@ import { useGlobalState } from "../Components/Context";
 import { liquid_drop_model, elements } from "../Functions";
 import { useEffect } from "react";
 import { useState } from "react";
-import IsotopeNotFound from "./IsotopeNotFound";
 import Typed from 'react-typed';
-
+import IsotopeNotFound from "./IsotopeNotFound";
+import { FaArrowLeft } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 //TODO:404 screen
 const CalulationScreen = () => {
     const [data, setData] = useState();
-
+    const nav = useNavigate()
     const {
         Z,
         N,
@@ -71,7 +72,18 @@ const CalulationScreen = () => {
 
             {/* Mass Defect */}
             <div className="bg-black text-white p-6 px-0 items-center " >
-                <h1 className=" text-end text-5xl font-bold" >{elementName[0]}</h1>
+
+                <div className="grid grid-cols-2">
+
+                    <div className="mr-2" >
+                        <FaArrowLeft size={60} className="w-[55px] h-[45px] p-2" onClick={() => {
+                        nav('/')
+                    }} />
+                    </div>
+                    <h1 className=" text-end text-5xl font-bold" >{elementName[0]}</h1>
+
+                </div>
+
                 <h2 className=" text-center text-2xl mb-2 font-semibold mt-12"  >Mass Defect</h2>
 
                 <p className="text-wrap md:text-xl sm:text-sm m-4 mx-8 font-normal lg:leading-[40px] md:leading-[30px]">
@@ -144,6 +156,12 @@ const CalulationScreen = () => {
             {/* <div className="mt-0 bg-white text-black py-2 px-0 items-start col-span-2 j " >
 
             </div> */}
+            {/* <div  className="col-span-2 items-center" >
+                <button className=" bg-black text-white w-[100px] h-[35px] my-3 rounded-lg">
+                    {"Go BACK"}
+                </button>
+            </div> */}
+
         </div>
     )
 }

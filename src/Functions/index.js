@@ -1,64 +1,40 @@
-const mass_defect_be = (Mx, Z, N) => {
-    const mass_of_proton = 1.007276466583; // unit amu //1.007825031898 1.00782518 1.007276466621  1.007276466583
-    const mass_of_nutreon = 1.00866491590; // unit amu // 1.00866491590
-    const mass_of_electron = 5.48579909065 * (10 ** -4); // unit amu
-    let mass_defect = (mass_of_proton * Z) + (mass_of_nutreon * N) + (mass_of_electron * Z) - Mx; //unit amu
-    // const mass_1H = 1.007825031898;
-    // mass_defect = (mass_1H * Z) + (mass_of_nutreon * N) - Mx; //unit amu
-    //1 amu c^2 = 931.49432 MeV
-    const conversion_amu_MeV = 931.49432;
-    const bindnig_engergy = mass_defect * conversion_amu_MeV; // binding energy in MeV
 
-    // const speed_of_light = 299792458;
-    // // const conversion = 1.66053904 * (10**-27)
-    // const bindnig_engergy = mass_defect * (931.49 / (speed_of_light * speed_of_light)) * (speed_of_light * speed_of_light);
+// importing constant parameters
+import { mass_of_proton, mass_of_neutron, mass_of_electron, conversion_amu_MeV, aV, aS, aC, aA, aP } from '../Functions/constants.js'
 
-    return bindnig_engergy.toFixed(6);
+const BE_func = (Mx, Z, N) => {
+    let bindnig_engergy = mass_defect_func(Mx, Z, N) * conversion_amu_MeV; // binding energy in MeV
+    return [bindnig_engergy.toFixed(8)];
 };
 
-const mass_defect = (Mx, Z, N) => {
-    const mass_of_proton = 1.007276466583; // unit amu //1.007825031898 1.00782518 1.007276466621  1.007276466583
-    const mass_of_nutreon = 1.00866491590; // unit amu // 1.00866491590
-    const mass_of_electron = 5.48579909065 * (10 ** -4); // unit amu
-    let mass_defect = (mass_of_proton * Z) + (mass_of_nutreon * N) + (mass_of_electron * Z) - Mx;
+const mass_defect_func = (Mx, Z, N) => {
+    let mass_defect = (mass_of_proton * Z) + (mass_of_neutron * N) + (mass_of_electron * Z) - Mx;
     return mass_defect;
 }
 
-const mass_defect_be2 = (Mx, Z, N) => {
-    const mass_of_proton = 1.007276466583; // unit amu //1.007825031898 1.00782518
-    const mass_of_nutreon = 1.00866491590; // unit amu // 1.00866491590
-    const mass_of_electron = 5.48579909065 * (10 ** -4); // unit amu
-    let mass_defect = (mass_of_proton * Z) + (mass_of_nutreon * N) + (mass_of_electron * Z) - Mx; //unit amu
-    const mass_1H = 1.007825031898;
-    mass_defect = (mass_1H * Z) + (mass_of_nutreon * N) - Mx; //unit amu
-    //1 amu c^2 = 931.49432 MeV
-    const conversion_amu_MeV = 931.49432;
-    const bindnig_engergy = mass_defect * conversion_amu_MeV; // binding energy in MeV
 
-    // const speed_of_light = 299792458;
-    // // const conversion = 1.66053904 * (10**-27)
-    // const bindnig_engergy = mass_defect * (931.49 / (speed_of_light * speed_of_light)) * (speed_of_light * speed_of_light);
+const liquid_drop_model = (Z, N) => {
+    const A = Z + N ;
+    const Volume_term = aV * A;
+    const Surface_term = - aS * A ** (2 / 3);
+    const Coulomb_term = - aC * Z * (Z - 1) / A ** (1 / 3);
+    const Asymmetry_term = - aA * (N - Z) ** 2 / A ;
+    const Pairing_term = aP / A ** (1 / 2)
 
-    return bindnig_engergy.toFixed(2);
-};
-
-const liquid_drop_model = (Mx, Z, N) => {
-    const aV = 15.85;
-    const aS = 18.34;
-    const aMx = 23.21;
-    const aC = 0.714;
-    const aP = 12.00;
+    let X = Volume_term + Surface_term + Coulomb_term + Asymmetry_term ;
 
     if (N % 2 !== 0 && Z % 2 !== 0) {
-        let cal = aV * Mx - aS * (Mx ** (2 / 3)) - aC * ((Z * (Z - 1)) / Mx ** (1 / 3)) - aMx * (((Mx - 2 * Z) ** 2) / Mx ** 2) + aP / Mx ** (1 / 2);
-        return cal;
+       let BE = X - Pairing_term;
+       return BE;
     }
     else if (N % 2 === 0 && Z % 2 === 0) {
-        let cal = aV * Mx - aS * (Mx ** (2 / 3)) - aC * ((Z * (Z - 1)) / Mx ** (1 / 3)) - aMx * (((Mx - 2 * Z) ** 2) / Mx ** 2) - aP / Mx ** (1 / 2);
-        return cal;
+        let BE =  X + Pairing_term;
+        return BE;
     }
-    let cal = aV * Mx - aS * (Mx ** (2 / 3)) - aC * ((Z * (Z - 1)) / Mx ** (1 / 3)) - aMx * (((Mx - 2 * Z) ** 2) / Mx ** 2);
-    return cal;
+    else {
+    let BE = X;
+    return BE;
+    }
 }
 
 
@@ -99,6 +75,7 @@ const elements = (symbol) => {
 
         case "Mg":
             return "Magnesium";
+
         case "Al":
             return "Aluminium";
 
@@ -227,132 +204,196 @@ const elements = (symbol) => {
 
         case "Cs":
             return "Caesium";
+
         case "Ba":
             return "Barium";
+
         case "La":
             return "Lanthanum";
+
         case "Hf":
             return "Hafnium";
+
         case "Ta":
             return "Tantalum";
+
         case "W":
             return "Tungsten";
+
         case "Re":
             return "Rhenium";
+
         case "Os":
             return "Osmium";
+
         case "Ir":
             return "Iridium";
+
         case "Pt":
             return "Platinum";
+
         case "Au":
             return "Gold";
+
         case "Hg":
             return "Mercury";
+
         case "Tl":
             return "Thallium";
+
         case "Pb":
             return "Lead";
+
         case "Bi":
             return "Bismuth";
+
         case "Po":
             return "Polonium";
+
         case "At":
             return "Astatine";
+
         case "Rn":
             return "Radon";
+
         case "Fr":
             return "Francium";
+
         case "Ra":
             return "Radium";
+
         case "Ac":
             return "Actinium";
+
         case "Rf":
             return "Rutherfordium";
+
         case "Db":
             return "Dubnium";
+
         case "Sg":
             return "Seaborgium";
+
         case "Bh":
             return "Bohrium";
+
         case "Hs":
             return "Hassium";
+
         case "Mt":
             return "Meitnerium";
+
         case "Ds":
             return "Darmstadtium";
+
         case "Rg":
             return "Roentgenium";
+
         case "Cn":
             return "Copernicium";
+
         case "Nh":
             return "Nihonium";
+
         case "Fl":
             return "Flerovium";
+
         case "Mc":
             return "Moscovium";
+
         case "Lv":
             return "Livermorium";
+
         case "Ts":
             return "Tennessine";
+
         case "Og":
             return "Oganesson";
+
         case "Ce":
             return "Cerium";
+
         case "Pr":
             return "Praseodymium";
+
         case "Nd":
             return "Neodymium";
+
         case "Pm":
             return "Promethium";
+
         case "Sm":
             return "Samarium";
+
         case "Eu":
             return "Europium";
+
         case "Gd":
             return "Gadolinium";
+
         case "Tb":
             return "Terbium";
+
         case "Dy":
             return "Dysprosium";
+
         case "Ho":
             return "Holmium";
+
         case "Er":
             return "Erbium";
+
         case "Tm":
             return "Thulium";
+
         case "Yb":
             return "Ytterbium";
+
         case "Lu":
             return "Lutetium";
+
         case "Th":
             return "Thorium";
+
         case "Pa":
             return "Protactinium";
+
         case "U":
             return "Uranium";
+
         case "Np":
             return "Neptunium";
+
         case "Pu":
             return "Plutonium";
+
         case "Am":
             return "Americium";
+
         case "Cm":
             return "Curium";
+
         case "Bk":
             return "Berkelium";
+
         case "Cf":
             return "Californium";
+
         case "Es":
             return "Einsteinium";
+
         case "Fm":
             return "Fermium";
+
         case "Md":
             return "Mendelevium";
+
         case "No":
             return "Nobelium";
+
         case "Lr":
             return "Lawrencium";
+
         default:
             return "";
     }
@@ -383,4 +424,4 @@ const splitElementName = (str) => {
     return [first, second];
 };
 
-export { liquid_drop_model, mass_defect_be, mass_defect_be2, elements, splitElementName, mass_defect};
+export { liquid_drop_model, BE_func, elements, splitElementName, mass_defect_func};

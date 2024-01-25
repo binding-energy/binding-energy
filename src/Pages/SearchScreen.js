@@ -1,3 +1,6 @@
+// This is Hadi's version
+// Last update: Jan. 24, 2024
+
 import React, { useState } from "react";
 import { useGlobalState } from "../Components/Context";
 import CustomInput from "../Components/CustomInput";
@@ -52,7 +55,6 @@ const SearchScreen = () => {
 
     return (
         <div className="grid grid-cols-2 p-0 h-screen " >
-{/* This is Hadi's version */}
             {/* Description */}
             <div className="bg-black text-white p-6 px-0 items-center " >
                 <h1 className=" text-end text-5xl font-semibold" >Binding Ener</h1>
@@ -72,10 +74,10 @@ const SearchScreen = () => {
                     </p>
                     <br />
                     <p className="text-wrap m-0 font-normal lg:leading-[25px] md:leading-[20px] md:text-lg sm:text-sm">
-                        This website provides calculations for the nuclear binding energy of specific isotopes through two distinct methods: 1.) <b>The mass defect approach</b>, which involves calculating the difference between the mass of the nucleus and its constituent protons and neutrons, and 2.) <b>The liquid drop model</b>, a semi-empirical mass formula that estimates the binding energy of a nucleus based on its proton and neutron count.
+                        This website provides a user-friendly tool for calculating the binding energy of any specified nuclide. Users can input the number of protons and neutrons, and the website will then verify the existence of the nuclide in the IAEA-NDS database. If the nuclide is found, the website presents its binding energy calculated using two distinct methods: 1.) <b>The Mass Defect Approach</b>: This method calculates the binding energy by determining the mass difference between the nuclide and its constituent protons and neutrons. 2.) <b>The Liquid Drop Model</b>: This is a semi-empirical formula that estimates the binding energy of a nucleus, taking into account the number of protons and neutrons it contains.
+                        
                     </p>
                 </div>
-
 
             </div>
 
@@ -83,7 +85,7 @@ const SearchScreen = () => {
             <div className="bg-white p-6 px-0 justify-center " >
 
                 <h1 className=" text-start text-5xl font-semibold">gy Calculator</h1>
-                <h2 className=" text-center text-2xl font-normal mb-2  mt-12" >Enter Isotope Properties:</h2>
+                <h2 className=" text-center text-2xl font-normal mb-2  mt-12" >Enter Nuclide Properties:</h2>
 
                 <div className="grid justify-items-center " >
                     <CustomInput placeholder={"Enter the number of protons (Z)"} value={Z} onChange={({ target }) => { setZ(target.value) }} error={error1} error_message={errMsg1} onKeyDown={enterListenHandler} />

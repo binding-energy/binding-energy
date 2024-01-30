@@ -4,13 +4,13 @@ import { mass_of_proton, mass_of_neutron, mass_of_electron, aV, aS, aC, aA, aP }
 
 
 import React from "react";
-import { BE_func, mass_defect_func, splitElementName } from "../Functions";
-import { useGlobalState } from "../Components/Context";
-import { liquid_drop_model, elements } from "../Functions";
+import { BE_func, mass_defect_func, splitElementName } from "../Functions/index.js";
+import { useGlobalState } from "../Components/Context.js";
+import { liquid_drop_model, elements } from "../Functions/index.js";
 import { useEffect } from "react";
 import { useState } from "react";
 import Typed from 'react-typed';
-import IsotopeNotFound from "./IsotopeNotFound";
+import IsotopeNotFound from "./IsotopeNotFound.js";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import IsotopeCannotBeCal from './IsotopeCannotBeCal.js';

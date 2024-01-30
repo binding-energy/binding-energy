@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero {
+    background-image: url('./Assets/header3.png');
+    background-size: cover;
+}
+.background {
+    background-image:  url('./Assets/Background.jpg');
+    background-size: cover;
+}

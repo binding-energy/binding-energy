@@ -70,18 +70,24 @@ const CalulationScreen = () => {
         )
     }
 
-    if (data["binding"] === "") {
-        return (
-            <IsotopeCannotBeCal />
-        )
-    }
-
     const atomic_mass = parseInt(data['atomic_mass']) / 1000000;
     const atomic_number = parseInt(data['z'])
     const neutron_number = parseInt(data['n']);
     const element = elements(data['symbol']) + "-" + (atomic_number + neutron_number);
     const elementName = splitElementName(element);
-    const mass_number = atomic_number + neutron_number
+    const mass_number = atomic_number + neutron_number;
+    
+    if (data["binding"] === "") {
+        const atomic_number = parseInt(data['z'])
+        const neutron_number = parseInt(data['n']);
+        const mass_number = atomic_number + neutron_number;
+        let name = `${elements(data['symbol'])}-${mass_number}`
+        return (
+            <IsotopeCannotBeCal element={name} z ={atomic_number} n ={neutron_number}  />
+        )
+    }
+
+
     return (
         <>
             <div className="grid grid-cols-2 p-0 h-screen " >

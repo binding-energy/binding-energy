@@ -5,7 +5,7 @@ import Hero from "../Components/SearchScreenComps/Hero";
 const SearchScreen = () => {
 
     return (
-    <div className=" p-0 bg-[#6f263d] text-white h-full" >
+    <div className=" p-0 bg-white text-black h-full" >
         <NavBar />
         <Hero />
     </div>

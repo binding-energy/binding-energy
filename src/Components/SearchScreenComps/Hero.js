@@ -21,28 +21,29 @@ const Hero = () => {
 
 
     const onClick = () => {
-        setError1(false);
-        setError2(false);
-        if (Z && N) {
+        if (Z >= 0 && N >= 0) {
             setError1(false);
             setError2(false);
             nav('/calulations')
 
         }
-        else if (!Z && !N) {
+        if(Z < 0 ) {
+            setErrMsg1("Number cannot be negative!")
             setError1(true);
-            setErrMsg1("Invalid Input!")
-            setError2(true);
-            setErrMsg2("Invalid Input!")
         }
-        else if (!Z) {
+        if(N < 0 ) {
+            setErrMsg2("Number cannot be negative!")
+            setError2(true);
+        }
+        if(String(Z) === "e") {
+            setErrMsg1("Input must be a number!")
             setError1(true);
-            setErrMsg1("Invalid Input!")
         }
-        else if (!N) {
+        if(String(N) === "e") {
+            setErrMsg2("Input must be a number!")
             setError2(true);
-            setErrMsg2("Invalid Input!")
         }
+        console.log(Z)
     }
 
 
@@ -55,7 +56,7 @@ const Hero = () => {
 
 
     return (
-        <div className=" flex flex-col items-center text-white bg-[#6f263d] text-lg pt-10 w-full" >
+        <div className=" flex flex-col items-center text-black bg-white text-lg pt-10 w-full" >
             {/* lg:w-[900px] sm:w-fit */}
             <div className="w-[900px]">
                 <h1 className="text-start text-2xl" >Nuclear Binding Energy Calculator</h1>

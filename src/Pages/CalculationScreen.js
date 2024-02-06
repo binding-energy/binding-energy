@@ -53,7 +53,7 @@ const CalulationScreen = () => {
                 <div className="m-2 mb-3 self-center">
                     {/* <h1 className=" text-white text-3xl font-semibold ">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1> */}
                     {/* <h1 className=" text-white text-3xl font-semibold ">Calculating<Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1> */}
-                    <h1 className=" text-white text-3xl font-semibold animate-bounce text-center"> Nuclide Search and Energy Calculation <Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1>
+                    <h1 className=" text-white text-3xl font-semibold animate-bounce text-center"> Nuclide Search and Binding Energy Calculation <Typed className=" text-white text-3xl font-semibold " strings={["..."]} typeSpeed={120} backSpeed={140} loop /></h1>
                 </div>
             </div>
         )

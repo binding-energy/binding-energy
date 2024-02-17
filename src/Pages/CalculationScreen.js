@@ -70,7 +70,7 @@ const CalulationScreen = () => {
         )
     }
 
-    const atomic_mass = parseInt(data['atomic_mass']) / 1000000;
+    const atomic_mass = parseInt(data['atomic_mass']) / 1000000
     const atomic_number = parseInt(data['z'])
     const neutron_number = parseInt(data['n']);
     const element = elements(data['symbol']) + "-" + (atomic_number + neutron_number);

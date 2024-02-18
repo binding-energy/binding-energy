@@ -127,14 +127,14 @@ const CalulationScreen = () => {
                         Conversion Factor: 1 amu = {conversion_amu_MeV} MeV/c<sup>2</sup>
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        Δm = {mass_defect_func(atomic_mass, atomic_number, neutron_number).toFixed(8)} amu
+                        Δm = {mass_defect_func(atomic_mass, atomic_number, neutron_number).toFixed(6)} amu
                         <br />
                         B.E. = {BE_func(atomic_mass, atomic_number, neutron_number)} MeV
                         <br />
-                        B.E. per nucleon (B.E./A): {(BE_func(atomic_mass, atomic_number, neutron_number) / mass_number).toFixed(8)} MeV
+                        B.E. per nucleon (B.E./A): {(BE_func(atomic_mass, atomic_number, neutron_number) / mass_number).toFixed(6)} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(8)} MeV
+                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(6)} MeV
                     </p>
                 </div>
 
@@ -158,12 +158,12 @@ const CalulationScreen = () => {
                         Pairing term coefficient: a<sub>P</sub> = {aP} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        B.E.: {liquid_drop_model(atomic_number, neutron_number).toFixed(8)} MeV
+                        B.E.: {liquid_drop_model(atomic_number, neutron_number).toFixed(6)} MeV
                         <br />
-                        B.E./A: {(liquid_drop_model(atomic_number, neutron_number) / mass_number).toFixed(8)} MeV
+                        B.E./A: {(liquid_drop_model(atomic_number, neutron_number) / mass_number).toFixed(6)} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(8)} MeV
+                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(6)} MeV
                     </p>
                 </div>
             </div>

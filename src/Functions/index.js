@@ -4,7 +4,7 @@ import { mass_of_proton, mass_of_neutron, mass_of_electron, conversion_amu_MeV, 
 
 const BE_func = (Mx, Z, N) => {
     let bindnig_engergy = mass_defect_func(Mx, Z, N) * conversion_amu_MeV; // binding energy in MeV
-    return [bindnig_engergy.toFixed(8)];
+    return [bindnig_engergy.toFixed(4)];
 };
 
 const mass_defect_func = (Mx, Z, N) => {

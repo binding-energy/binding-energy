@@ -129,7 +129,7 @@ const CalulationScreen = () => {
                         <hr class="hey-that’s-my-line" />
                         Δm = {mass_defect_func(atomic_mass, atomic_number, neutron_number).toFixed(5)} amu
                         <br />
-                        B.E. = {BE_func(atomic_mass, atomic_number, neutron_number).toFixed(5)} MeV 
+                        B.E. = {BE_func(atomic_mass, atomic_number, neutron_number).toFixed(5)} MeV
                         <br />
                         B.E. per nucleon (B.E./A): {(BE_func(atomic_mass, atomic_number, neutron_number) / mass_number).toFixed(5)} MeV
                         <br />

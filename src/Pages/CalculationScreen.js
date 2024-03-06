@@ -1,6 +1,6 @@
 
 // importing constant parameters
-import { mass_of_proton, mass_of_neutron, mass_of_electron, aV, aS, aC, aA, aP } from '../Functions/constants.js'
+import { mass_of_proton, mass_of_neutron, mass_of_electron, aV, aS, aC, aA, aP, conversion_amu_MeV } from '../Functions/constants.js'
 
 
 import React from "react";
@@ -70,7 +70,7 @@ const CalulationScreen = () => {
         )
     }
 
-    const atomic_mass = parseInt(data['atomic_mass']) / 1000000;
+    const atomic_mass = parseFloat(data['atomic_mass']) / 1000000
     const atomic_number = parseInt(data['z'])
     const neutron_number = parseInt(data['n']);
     const element = elements(data['symbol']) + "-" + (atomic_number + neutron_number);
@@ -124,17 +124,17 @@ const CalulationScreen = () => {
                         <br />
                         Mass of Nuclide: m<sub>atom</sub> = {atomic_mass} amu
                         <br />
-                        Conversion Factor: 1 amu = 931.493614838934 MeV/c<sup>2</sup>
+                        Conversion Factor: 1 amu = {conversion_amu_MeV} MeV/c<sup>2</sup>
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        Δm = {mass_defect_func(atomic_mass, atomic_number, neutron_number).toFixed(8)} amu
+                        Δm = {mass_defect_func(atomic_mass, atomic_number, neutron_number).toFixed(4)} amu
                         <br />
-                        B.E. = {BE_func(atomic_mass, atomic_number, neutron_number)} MeV
+                        B.E. = {BE_func(atomic_mass, atomic_number, neutron_number)} MeV 
                         <br />
-                        B.E. per nucleon (B.E./A): {(BE_func(atomic_mass, atomic_number, neutron_number) / mass_number).toFixed(8)} MeV
+                        B.E. per nucleon (B.E./A): {(BE_func(atomic_mass, atomic_number, neutron_number) / mass_number).toFixed(4)} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(8)} MeV
+                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(4)} MeV
                     </p>
                 </div>
 
@@ -158,12 +158,12 @@ const CalulationScreen = () => {
                         Pairing term coefficient: a<sub>P</sub> = {aP} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        B.E.: {liquid_drop_model(atomic_number, neutron_number).toFixed(8)} MeV
+                        B.E.: {liquid_drop_model(atomic_number, neutron_number).toFixed(4)} MeV
                         <br />
-                        B.E./A: {(liquid_drop_model(atomic_number, neutron_number) / mass_number).toFixed(8)} MeV
+                        B.E./A: {(liquid_drop_model(atomic_number, neutron_number) / mass_number).toFixed(4)} MeV
                         <br />
                         <hr class="hey-that’s-my-line" />
-                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(8)} MeV
+                        IAEA-NDS (B.E./A): {(data['binding'] / 1000).toFixed(4)} MeV
                     </p>
                 </div>
             </div>

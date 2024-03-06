@@ -16,10 +16,10 @@ const mass_defect_func = (Mx, Z, N) => {
 const liquid_drop_model = (Z, N) => {
     const A = Z + N ;
     const Volume_term = aV * A;
-    const Surface_term = - aS * A ** (2 / 3);
-    const Coulomb_term = - aC * Z * (Z - 1) / A ** (1 / 3);
-    const Asymmetry_term = - aA * (N - Z) ** 2 / A ;
-    const Pairing_term = aP / A ** (1 / 2)
+    const Surface_term = - aS * (A ** (2 / 3));
+    const Coulomb_term = - aC * (Z * (Z - 1)) / (A ** (1 / 3));
+    const Asymmetry_term = - aA * ((A - (Z*2)) ** 2) / (A**2);
+    const Pairing_term = aP / (A ** (1 / 2))
 
     let X = Volume_term + Surface_term + Coulomb_term + Asymmetry_term ;
 

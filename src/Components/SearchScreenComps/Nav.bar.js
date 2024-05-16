@@ -5,7 +5,7 @@ const NavBar = (props) => {
     const nav = useNavigate()
     let bol = props.bol;
     return (
-        <div className="bg-[#6f263d] text-white flex justify-between items-start h-[200px] w-[900px] mx-auto p-8 shadow-md hero">
+        <div className="bg-[#6f263d] text-white flex justify-between items-start h-[200px] w-[485px] md:w-[700px] lg:w-[900px] mx-auto p-8 shadow-md hero">
             {
             bol ? (
                     <div className="mr-2" >

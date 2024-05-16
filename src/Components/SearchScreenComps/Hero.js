@@ -56,10 +56,11 @@ const Hero = () => {
 
 
     return (
-        <div className=" flex flex-col items-center text-black bg-white text-lg pt-10 w-full" >
+        <div className=" flex flex-col items-center text-black bg-white text-lg pt-10 w-11/12 md:w-7/12 lg:w-full p-3" >
             {/* lg:w-[900px] sm:w-fit */}
-            <div className="w-[900px]">
-                <h1 className="text-start text-2xl" >Nuclear Binding Energy Calculator</h1>
+            <div className=" md:w-[700px] lg:w-[900px]">
+            
+                <h1 className="text-start text-lg lg:text-2xl md:text-xl" >Nuclear Binding Energy Calculator</h1>
                 <br />
                 <p className="text-wrap leading-[25px]" >
                     This website provides a user-friendly tool for calculating the binding energy of any specified nuclide.
@@ -80,7 +81,8 @@ const Hero = () => {
                 </div>
             </div>
 
-            <div className="w-[900px] m-16 my-8">
+            <div className="md:w-[700px] lg:w-[900px] my-8">
+            {/* <div className="w-[900px] m-16 my-8"> */}
                 <h1 className="text-start text-2xl" >
                     What is Nuclear Binding Energy?
                 </h1>

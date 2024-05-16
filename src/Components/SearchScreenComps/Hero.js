@@ -56,7 +56,7 @@ const Hero = () => {
 
 
     return (
-        <div className=" flex flex-col items-center text-black bg-white text-lg pt-10 w-11/12 md:w-7/12 lg:w-full p-3" >
+        <div className=" flex flex-col items-center text-black bg-white text-lg pt-10 w-11/12 lg:w-full p-3" >
             {/* lg:w-[900px] sm:w-fit */}
             <div className=" md:w-[700px] lg:w-[900px]">
             

@@ -80,7 +80,7 @@ const Hero = () => {
                     <CustomButton title={"Calculate"} onClick={() => onClick()} />
                 </div>
             </div>
-
+{/* s */}
             <div className="md:w-[700px] lg:w-[900px] my-8">
                 {/* <div className="w-[900px] m-16 my-8"> */}
                 <h1 className="text-start text-2xl" >

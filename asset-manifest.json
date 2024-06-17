@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.b983f397.css",
-    "main.js": "/static/js/main.66b72bea.js",
+    "main.css": "/static/css/main.01ac6f5c.css",
+    "main.js": "/static/js/main.bc62de4d.js",
     "static/media/header3.png": "/static/media/header3.37804f0c5084a5a722ad.png",
+    "static/media/Binding-Energy_per-Nucleon.jpg": "/static/media/Binding-Energy_per-Nucleon.adc5beb3a082b10115d7.jpg",
     "static/media/Background.jpg": "/static/media/Background.af815c1f918f072e83f3.jpg",
     "index.html": "/index.html",
-    "main.b983f397.css.map": "/static/css/main.b983f397.css.map",
-    "main.66b72bea.js.map": "/static/js/main.66b72bea.js.map"
+    "main.01ac6f5c.css.map": "/static/css/main.01ac6f5c.css.map",
+    "main.bc62de4d.js.map": "/static/js/main.bc62de4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b983f397.css",
-    "static/js/main.66b72bea.js"
+    "static/css/main.01ac6f5c.css",
+    "static/js/main.bc62de4d.js"
   ]
 }
